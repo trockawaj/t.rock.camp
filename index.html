@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>T Rock Camp - Luxury BBQ & Stay</title>
+    <!-- Google Fonts: Cormorant Garamond for elegant serif, Noto Sans JP for modern clean text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+JP:wght@100;300;400&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <!-- Transparent Header with Black Text (Enhanced readability with subtle glow) -->
+    <header class="main-header">
+      <div class="logo-space">
+        <img src="/src/logo/logo2.png.png" alt="T Rock Camp Logo" class="header-logo">
+      </div>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#hero">Top</a></li>
+          <li><a href="#concept">Concept</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#price">Price</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="scroll-container" id="scrollContainer">
+      
+      <!-- Section 1: Hero -->
+      <section id="hero" class="panel">
+        <div class="video-wrapper">
+          <video autoplay muted loop playsinline class="bg-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-mountain-and-forest-landscape-time-lapse-1249-large.mp4" type="video/mp4">
+          </video>
+          <div class="video-overlay"></div>
+        </div>
+        <div class="hero-content reveal">
+          <h1 class="hero-title">T Rock Camp</h1>
+          <p class="hero-subtitle">Nature & Architecture. A new luxury.</p>
+        </div>
+        <div class="scroll-indicator">
+          <span>Scroll</span>
+          <div class="line"></div>
+        </div>
+      </section>
+
+      <!-- Section 2: Concept (Architectural Layout) -->
+      <section id="concept" class="panel concrete-bg">
+        <div class="architectural-lines"></div>
+        <div class="concept-layout">
+          <div class="concept-left reveal">
+            <h2 class="section-title">Concept</h2>
+          </div>
+          <div class="concept-right reveal">
+            <p class="concept-text">
+              日常の喧騒から離れた、洗練された空間。<br>
+              コンクリートの無機質さと、自然の息吹が調和する場所。<br>
+              新しい形のデイBBQと、<br>
+              愛犬と共に過ごす至福の宿泊体験を提供します。
+            </p>
+            <div class="decorator-line"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3: Menu -->
+      <section id="menu" class="panel concrete-bg dark-panel">
+        <div class="panel-inner">
+          <h2 class="section-title reveal">Menu</h2>
+          <div class="menu-grid">
+            <div class="menu-card reveal">
+              <span class="card-number">01</span>
+              <h3>Day BBQ</h3>
+              <p>厳選された地元食材を使用したプレミアムBBQセット。手ぶらで本格的なグリル体験をお楽しみいただけます。</p>
+            </div>
+            <div class="menu-card reveal" style="transition-delay: 0.2s;">
+              <span class="card-number">02</span>
+              <h3>Stay</h3>
+              <p>モダンでミニマルなコンクリート打ちっぱなしの客室。ドッグランを併設し、愛犬と一緒にくつろげるプライベート空間。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Price -->
+      <section id="price" class="panel concrete-bg">
+        <div class="architectural-lines"></div>
+        <div class="panel-inner flex-center">
+          <div class="price-container reveal">
+            <h2 class="section-title">Price</h2>
+            <ul class="price-list">
+              <li>
+                <span class="plan-name">Day BBQ Basic Plan</span>
+                <span class="plan-price">¥8,000 / person</span>
+              </li>
+              <li>
+                <span class="plan-name">Day BBQ Premium Plan</span>
+                <span class="plan-price">¥12,000 / person</span>
+              </li>
+              <li>
+                <span class="plan-name">Stay (1 Night / 2 Persons)</span>
+                <span class="plan-price">¥45,000 ~</span>
+              </li>
+              <li>
+                <span class="plan-name">Pet Charge</span>
+                <span class="plan-price">¥3,000 / pet</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5: Gallery -->
+      <section id="gallery" class="panel concrete-bg dark-panel">
+        <div class="gallery-wrapper">
+          <div class="gallery-header reveal">
+            <h2 class="section-title">Gallery</h2>
+          </div>
+          <div class="gallery-images">
+            <div class="g-img reveal" style="background-image: url('https://images.unsplash.com/photo-1525596662741-e94ff9f26de1?auto=format&fit=crop&q=80&w=800');"></div>
+            <div class="g-img g-img-large reveal" style="transition-delay: 0.15s; background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800');"></div>
+            <div class="g-img reveal" style="transition-delay: 0.3s; background-image: url('https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?auto=format&fit=crop&q=80&w=800');"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Contact -->
+      <section id="contact" class="panel concrete-bg">
+        <div class="panel-inner contact-layout">
+          <div class="contact-info reveal">
+            <h2 class="section-title">Contact</h2>
+            <p>ご予約・お問い合わせはお気軽に<br>下記のフォームよりご連絡ください。</p>
+          </div>
+          <form class="contact-form reveal" style="transition-delay: 0.2s;">
+            <div class="input-group">
+              <input type="text" placeholder="Name" required>
+            </div>
+            <div class="input-group">
+              <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+              <textarea placeholder="Message" rows="4" required></textarea>
+            </div>
+            <button type="button" class="submit-btn" onclick="alert('Demo Submit')">
+              <span>Send Message</span>
+              <div class="btn-line"></div>
+            </button>
+          </form>
+        </div>
+      </section>
+
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
