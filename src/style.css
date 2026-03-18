@@ -215,6 +215,14 @@ h1, h2, h3, h4, h5, h6, .serif {
   z-index: 2;
   text-align: center;
 }
+.center-hero-logo {
+  width: 320px; /* 従来のヘッダーロゴ（約150px）の2倍強のサイズに設定 */
+  max-width: 80vw;
+  height: auto;
+  object-fit: contain;
+  /* 動画上での視認性を高める光彩 */
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.9));
+}
 .hero-title {
   font-size: 8vw;
   letter-spacing: 0.1em;
@@ -235,15 +243,12 @@ h1, h2, h3, h4, h5, h6, .serif {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 0px;
+  bottom: 80px;
   right: 60px;
   z-index: 3;
   display: flex;
   align-items: center;
   gap: 15px;
-  height: 100px;
-  transform: rotate(90deg);
-  transform-origin: bottom right;
 }
 .scroll-indicator span {
   font-family: var(--font-sans);
