@@ -186,7 +186,8 @@ h1, h2, h3, h4, h5, h6, .serif {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(225, 225, 225, 0.95); /* 少し暗めの白/ライトグレーにして白浮き・コントラストを軽減 */
+  /* 画像の質感（コンクリート）を残しつつ、白すぎるのを抑えるために薄暗い黒透過レイヤーへ変更 */
+  background: rgba(0, 0, 0, 0.15); 
   z-index: 1;
 }
 .dark-panel.concrete-bg::before { background: var(--color-bg-darker); }
@@ -500,7 +501,52 @@ h1, h2, h3, h4, h5, h6, .serif {
   transform: translateY(2px);
 }
 
-/* Section 6: Contact */
+/* Section 6: Q & A */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+.faq-item {
+  border-bottom: 1px dotted rgba(0,0,0,0.2);
+  padding-bottom: 20px;
+}
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+.faq-q {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-black);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.faq-q span {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-black);
+  font-size: 1.2rem;
+}
+.faq-a {
+  font-size: 0.9rem;
+  color: rgba(0,0,0,0.7);
+  line-height: 1.8;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.faq-a span {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 1.2rem;
+}
+
+/* Section 7: Contact */
 .contact-layout {
   display: flex;
   justify-content: space-between;
