@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gDown = document.getElementById('gDown');
   const gallerySlider = document.getElementById('gallerySlider');
   let currentSlide = 0;
-  const totalSlides = 3;
+  const totalSlides = 6;
 
   if (gUp && gDown && gallerySlider) {
     gUp.addEventListener('click', () => {

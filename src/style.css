@@ -186,7 +186,7 @@ h1, h2, h3, h4, h5, h6, .serif {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--color-bg-overlay);
+  background: rgba(225, 225, 225, 0.95); /* 少し暗めの白/ライトグレーにして白浮き・コントラストを軽減 */
   z-index: 1;
 }
 .dark-panel.concrete-bg::before { background: var(--color-bg-darker); }
@@ -349,6 +349,13 @@ h1, h2, h3, h4, h5, h6, .serif {
   color: rgba(0,0,0,0.7);
   letter-spacing: 0.1em;
 }
+.facility-desc {
+  display: block;
+  font-size: 0.7rem;
+  margin-top: 15px;
+  color: rgba(0,0,0,0.5);
+  letter-spacing: 0.05em;
+}
 
 /* Section 4: Price */
 .flex-center {
@@ -405,6 +412,34 @@ h1, h2, h3, h4, h5, h6, .serif {
   padding-left: 20px;
   letter-spacing: 0.1em;
   border-radius: 4px;
+}
+
+/* Multi-line Price Layout */
+.multi-line-price {
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 20px;
+}
+.multi-line-price::after {
+  bottom: -10px !important;
+}
+.multi-line-price .plan-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.plan-sub {
+  font-size: 0.85rem;
+  color: rgba(0,0,0,0.6);
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+}
+.price-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-self: flex-end;
+  align-items: flex-end;
 }
 
 /* Section 5: Gallery Vertical Slider */
