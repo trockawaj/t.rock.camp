@@ -172,13 +172,11 @@ h1, h2, h3, h4, h5, h6, .serif {
   background-size: cover;
   background-position: center;
 }
-.lounge-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(255,255,255,0.75); }
 .bar-bg {
   background-image: url('/src/logo/bar.png.png');
   background-size: cover;
   background-position: center;
 }
-.bar-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(255,255,255,0.75); }
 .sunset-bg {
   background-image: url('/src/logo/sunset.png.png');
   background-size: cover;
@@ -288,34 +286,24 @@ h1, h2, h3, h4, h5, h6, .serif {
 
 
 /* Section 2: Concept */
-.concept-layout {
-  display: flex;
-  width: 80%;
-  max-width: 1400px;
-  justify-content: space-between;
-  align-items: center;
+/* Unified Text Overlay Box for Concept and Menu */
+.white-glass-box {
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white layer */
+  padding: 60px 80px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  display: inline-block;
+  backdrop-filter: blur(10px); /* Clean glass look */
 }
-.concept-left { flex: 1; }
-.concept-right {
-  flex: 1;
-  position: relative;
-  padding-left: 100px;
+.text-center {
+  text-align: center;
 }
 .concept-text {
   font-size: 1.1rem;
   line-height: 2.6;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.15em;
   color: var(--color-black);
-}
-.decorator-line {
-  position: absolute;
-  left: 40px;
-  top: -20px;
-  bottom: -20px;
-  width: 1px;
-  background: var(--color-accent);
-  opacity: 0.5;
 }
 
 /* Section 3: Menu */
@@ -326,17 +314,18 @@ h1, h2, h3, h4, h5, h6, .serif {
   margin-top: 40px;
 }
 .menu-card {
-  background: rgba(0,0,0,0.02);
-  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white layer, unified with Concept */
+  border: 1px solid rgba(255,255,255,0.8);
   padding: 60px;
   position: relative;
   transition: var(--transition-slow);
   backdrop-filter: blur(10px);
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
 }
 .menu-card:hover {
-  background: rgba(0,0,0,0.05);
   transform: translateY(-10px);
-  border-color: rgba(0,0,0,0.15);
+  box-shadow: 0 15px 50px rgba(0,0,0,0.15);
 }
 .card-number {
   position: absolute;
