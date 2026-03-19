@@ -398,21 +398,15 @@ h1, h2, h3, h4, h5, h6, .serif {
 .plan-name {
   font-family: var(--font-serif);
   font-size: 1.6rem;
-  background: var(--color-bg-overlay);
   color: var(--color-black);
-  padding-right: 20px;
   letter-spacing: 0.05em;
-  border-radius: 4px;
 }
 .plan-price {
   font-family: var(--font-sans);
   font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-accent);
-  background: var(--color-bg-overlay);
-  padding-left: 20px;
   letter-spacing: 0.1em;
-  border-radius: 4px;
 }
 
 /* Multi-line Price Layout */
