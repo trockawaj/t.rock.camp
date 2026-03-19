@@ -115,7 +115,7 @@ h1, h2, h3, h4, h5, h6, .serif {
 .main-nav a {
   text-decoration: none;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
+  font-size: 0.95rem; /* slightly larger header text */
   letter-spacing: 0.15em;
   /* ユーザー指示通り黒文字化 + 動画上でも見えるよう白光彩 */
   color: #050505;
@@ -288,19 +288,19 @@ h1, h2, h3, h4, h5, h6, .serif {
 /* Section 2: Concept */
 /* Unified Text Overlay Box for Concept and Menu */
 .white-glass-box {
-  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white layer */
-  padding: 60px 80px;
+  background: rgba(255, 255, 255, 0.65); /* Increased transparency */
+  padding: 40px 50px; /* Reduced box size */
   border-radius: 4px;
   box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   display: inline-block;
-  backdrop-filter: blur(10px); /* Clean glass look */
+  backdrop-filter: blur(10px);
 }
 .text-center {
   text-align: center;
 }
 .concept-text {
-  font-size: 1.1rem;
-  line-height: 2.6;
+  font-size: 0.95rem; /* Reduced text size */
+  line-height: 2.2;
   font-weight: 500;
   letter-spacing: 0.15em;
   color: var(--color-black);
@@ -314,9 +314,9 @@ h1, h2, h3, h4, h5, h6, .serif {
   margin-top: 40px;
 }
 .menu-card {
-  background: rgba(255, 255, 255, 0.85); /* Semi-transparent white layer, unified with Concept */
-  border: 1px solid rgba(255,255,255,0.8);
-  padding: 60px;
+  background: rgba(255, 255, 255, 0.65); /* Unified transparency */
+  border: 1px solid rgba(255,255,255,0.6);
+  padding: 40px; /* Smaller box size */
   position: relative;
   transition: var(--transition-slow);
   backdrop-filter: blur(10px);
@@ -329,22 +329,22 @@ h1, h2, h3, h4, h5, h6, .serif {
 }
 .card-number {
   position: absolute;
-  top: 30px;
-  right: 40px;
+  top: 20px;
+  right: 30px;
   font-family: var(--font-serif);
-  font-size: 2rem;
+  font-size: 1.5rem; /* Smaller number */
   color: var(--color-accent);
   opacity: 0.5;
 }
 .menu-card h3 {
-  font-size: 2.5rem;
-  margin-bottom: 25px;
+  font-size: 1.5rem; /* Smaller title */
+  margin-bottom: 15px;
   letter-spacing: 0.1em;
   color: var(--color-black);
 }
 .menu-card p {
-  font-size: 0.95rem;
-  line-height: 2.2;
+  font-size: 0.85rem; /* Smaller text */
+  line-height: 2.0;
   font-weight: 400;
   color: rgba(0,0,0,0.7);
   letter-spacing: 0.1em;
