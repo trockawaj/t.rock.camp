@@ -31,4 +31,26 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal').forEach(el => {
     observer.observe(el);
   });
+
+  // Gallery Vertical Slider Logic
+  const gUp = document.getElementById('gUp');
+  const gDown = document.getElementById('gDown');
+  const gallerySlider = document.getElementById('gallerySlider');
+  let currentSlide = 0;
+  const totalSlides = 3;
+
+  if (gUp && gDown && gallerySlider) {
+    gUp.addEventListener('click', () => {
+      if (currentSlide > 0) {
+        currentSlide--;
+        gallerySlider.style.transform = `translateY(-${currentSlide * 100}vh)`;
+      }
+    });
+    gDown.addEventListener('click', () => {
+      if (currentSlide < totalSlides - 1) {
+        currentSlide++;
+        gallerySlider.style.transform = `translateY(-${currentSlide * 100}vh)`;
+      }
+    });
+  }
 });

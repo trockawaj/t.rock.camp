@@ -73,10 +73,10 @@ h1, h2, h3, h4, h5, h6, .serif {
   width: 100%;
   padding: 40px 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end; /* changed to top-right alignment */
   align-items: center;
   z-index: 100;
-  pointer-events: none; /* Let background elements receive clicks if needed */
+  pointer-events: none;
 }
 
 .logo-space {
@@ -164,6 +164,23 @@ h1, h2, h3, h4, h5, h6, .serif {
 /* Concrete Backgrounds with architectural vertical lines */
 .concrete-bg {
   background-image: url('/src/logo/haikei.png.png');
+  background-size: cover;
+  background-position: center;
+}
+.lounge-bg {
+  background-image: url('/src/logo/loung.png.png');
+  background-size: cover;
+  background-position: center;
+}
+.lounge-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(255,255,255,0.75); }
+.bar-bg {
+  background-image: url('/src/logo/bar.png.png');
+  background-size: cover;
+  background-position: center;
+}
+.bar-overlay { position: absolute; inset: 0; z-index: 1; background: rgba(255,255,255,0.75); }
+.sunset-bg {
+  background-image: url('/src/logo/sunset.png.png');
   background-size: cover;
   background-position: center;
 }
@@ -401,40 +418,62 @@ h1, h2, h3, h4, h5, h6, .serif {
   border-radius: 4px;
 }
 
-/* Section 5: Gallery */
-.gallery-wrapper {
+/* Section 5: Gallery Vertical Slider */
+.gallery-vertical-slider {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
   display: flex;
-  width: 90%;
-  max-width: 1600px;
-  height: 70vh;
-  align-items: center;
+  flex-direction: column;
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  z-index: 1;
 }
-.gallery-header {
-  width: 250px;
-  flex-shrink: 0;
-}
-.gallery-images {
-  display: flex;
-  gap: 40px;
-  align-items: center;
-  height: 100%;
-  flex: 1;
-}
-.g-img {
-  height: 60%;
-  width: 300px;
+.g-slide {
+  width: 100vw; height: 100vh;
+  flex: 0 0 100vh;
   background-size: cover;
   background-position: center;
-  filter: grayscale(100%) brightness(0.6);
-  transition: var(--transition-slow);
+  /* Frame styling: allow sunset-bg to peek through borders */
+  background-clip: content-box;
+  padding: 120px 200px 100px 200px;
+  box-sizing: border-box;
+  transition: padding var(--transition-slow);
 }
-.g-img-large {
-  height: 90%;
-  width: 450px;
+.gallery-ui {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 80px 200px 80px 60px;
 }
-.g-img:hover {
-  filter: grayscale(0) brightness(1);
-  transform: scale(1.05);
+.gallery-controls {
+  pointer-events: auto;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+.g-btn {
+  background: #151515;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 15px 30px;
+  font-family: var(--font-sans);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+.g-btn:hover {
+  background: #000;
+  border-color: rgba(255,255,255,0.8);
+  transform: translateY(-2px);
+}
+.g-btn:active {
+  transform: translateY(2px);
 }
 
 /* Section 6: Contact */
@@ -513,10 +552,8 @@ h1, h2, h3, h4, h5, h6, .serif {
   .concept-right { padding-left: 0; padding-top: 40px; }
   .decorator-line { display: none; }
   .menu-grid { grid-template-columns: 1fr; }
-  .gallery-wrapper { flex-direction: column; height: auto; padding: 100px 0; }
-  .gallery-header { width: auto; margin-bottom: 40px; }
-  .gallery-images { flex-direction: column; }
-  .g-img, .g-img-large { width: 100%; height: 400px; }
+  .gallery-ui { padding: 100px 40px; }
+  .g-slide { padding: 120px 40px 140px 40px; }
   .contact-layout { flex-direction: column; padding: 40px; }
   .contact-info { padding-right: 0; margin-bottom: 40px; }
 }
