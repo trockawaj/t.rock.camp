@@ -541,31 +541,31 @@ h1, h2, h3, h4, h5, h6, .serif {
 }
 
 /* Section 7: Contact */
-.contact-layout {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.contact-access-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  text-align: left;
 }
-.contact-info {
-  flex: 1;
-  padding-right: 120px;
-}
-.contact-info p {
-  font-size: 1rem;
-  line-height: 2.2;
-  color: rgba(0,0,0,0.7);
-  letter-spacing: 0.1em;
-  margin-top: 20px;
-}
-.contact-form {
-  flex: 1;
+.contact-col, .access-col {
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  background: rgba(0,0,0,0.02);
-  padding: 50px;
-  border: 1px solid rgba(0,0,0,0.08);
-  backdrop-filter: blur(10px);
+}
+.text-left { text-align: left; }
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Vertical spacing for inputs */
+  width: 100%;
+}
+.map-container {
+  flex: 1;
+  min-height: 400px;
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
 }
 .input-group input, .input-group textarea {
   width: 100%;

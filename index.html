@@ -94,11 +94,11 @@
                   <span class="plan-price">大人20名まで ￥65,000</span>
                 </div>
               </li>
-              <li>
+              <li style="visibility: hidden;">
                 <span class="plan-name">Stay (1 Night / 2 Persons)</span>
                 <span class="plan-price">¥45,000 ~</span>
               </li>
-              <li>
+              <li style="visibility: hidden;">
                 <span class="plan-name">Pet Charge</span>
                 <span class="plan-price">¥3,000 / pet</span>
               </li>
@@ -114,6 +114,7 @@
           <div class="g-slide" style="background-image: url('/src/logo/01.png');"></div>
           <div class="g-slide" style="background-image: url('/src/logo/02.png');"></div>
           <div class="g-slide" style="background-image: url('/src/logo/03.png');"></div>
+          <div class="g-slide" style="background-image: url('/src/logo/04.png');"></div>
           <div class="g-slide" style="background-image: url('/src/logo/bar.png.png');"></div>
           <div class="g-slide" style="background-image: url('/src/logo/loung.png.png');"></div>
           <div class="g-slide" style="background-image: url('/src/logo/sunset.png.png');"></div>
@@ -161,26 +162,27 @@
 
       <!-- Section 7: Contact -->
       <section id="contact" class="panel concrete-bg">
-        <div class="panel-inner contact-layout">
-          <div class="contact-info reveal">
-            <h2 class="section-title">Contact</h2>
-            <p>ご予約・お問い合わせはお気軽に<br>下記のフォームよりご連絡ください。</p>
+        <div class="panel-inner flex-center">
+          <div class="contact-access-wrapper white-glass-box reveal" style="width: 100%; max-width: 1200px; padding: 60px;">
+            <div class="contact-col">
+              <h2 class="section-title text-left" style="margin-bottom: 20px;">Contact</h2>
+              <p style="margin-bottom: 40px; font-size: 0.95rem; line-height: 1.8; color: var(--color-black);">ご予約・お問い合わせはお気軽に<br>下記のフォームよりご連絡ください。</p>
+              <form class="contact-form">
+                <div class="input-group"><input type="text" placeholder="Name" required></div>
+                <div class="input-group"><input type="email" placeholder="Email" required></div>
+                <div class="input-group"><textarea placeholder="Message" rows="5" required></textarea></div>
+                <button type="button" class="submit-btn" onclick="alert('Demo Submit')">
+                  <span>Send Message</span><div class="btn-line"></div>
+                </button>
+              </form>
+            </div>
+            <div class="access-col">
+              <h2 class="section-title text-left" style="margin-bottom: 20px;">Access</h2>
+              <div class="map-container">
+                <iframe src="https://maps.google.co.jp/maps?q=兵庫県南あわじ市阿那賀志知川146-2&output=embed&t=m&z=16" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+              </div>
+            </div>
           </div>
-          <form class="contact-form reveal" style="transition-delay: 0.2s;">
-            <div class="input-group">
-              <input type="text" placeholder="Name" required>
-            </div>
-            <div class="input-group">
-              <input type="email" placeholder="Email" required>
-            </div>
-            <div class="input-group">
-              <textarea placeholder="Message" rows="4" required></textarea>
-            </div>
-            <button type="button" class="submit-btn" onclick="alert('Demo Submit')">
-              <span>Send Message</span>
-              <div class="btn-line"></div>
-            </button>
-          </form>
         </div>
       </section>
 
