@@ -457,6 +457,13 @@ h1, h2, h3, h4, h5, h6, .serif {
   box-sizing: border-box;
   transition: padding var(--transition-slow);
 }
+.g-slide-01 { background-image: url('/src/logo/01.png'); }
+.g-slide-02 { background-image: url('/src/logo/02.png'); }
+.g-slide-03 { background-image: url('/src/logo/03.png'); }
+.g-slide-04 { background-image: url('/src/logo/04.png'); }
+.g-slide-bar { background-image: url('/src/logo/bar.png.png'); }
+.g-slide-loung { background-image: url('/src/logo/loung.png.png'); }
+.g-slide-sunset { background-image: url('/src/logo/sunset.png.png'); }
 .gallery-ui {
   position: absolute;
   inset: 0;
