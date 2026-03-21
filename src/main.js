@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gDown = document.getElementById('gDown');
   const gallerySlider = document.getElementById('gallerySlider');
   let currentSlide = 0;
-  const totalSlides = 6;
+  const totalSlides = 8;
 
   if (gUp && gDown && gallerySlider) {
     gUp.addEventListener('click', () => {
@@ -51,6 +51,22 @@ document.addEventListener('DOMContentLoaded', () => {
         currentSlide++;
         gallerySlider.style.transform = `translateY(-${currentSlide * 100}vh)`;
       }
+    });
+  }
+
+  // Hamburger Menu Logic
+  const hamburger = document.getElementById('hamburger');
+  const navLinksList = document.getElementById('nav-links');
+  if (hamburger && navLinksList) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      navLinksList.classList.toggle('active');
+    });
+    navLinksList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navLinksList.classList.remove('active');
+      });
     });
   }
 });
