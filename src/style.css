@@ -685,52 +685,54 @@ h1, h2, h3, h4, h5, h6, .serif {
   /* Fix Hamburger Menu Overflow and Shrink Text */
   .main-nav ul {
     justify-content: flex-start;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-top: 80px;
+    padding-bottom: 150px !important; /* Huge padding for Safari bottom bar */
+    height: 100dvh !important;
     overflow-y: auto;
   }
-  .main-nav li { margin: 12px 0; }
-  .main-nav a { font-size: 0.85rem; }
+  .main-nav li { margin: 10px 0; }
+  .main-nav a { font-size: 0.8rem !important; }
 
   /* Enable Vertical Scroll Inside Panels */
+  .panel, .scroll-container {
+    height: 100dvh !important; /* Safari 100vh bug fix */
+  }
   .panel-inner {
     overflow-y: auto;
-    padding-top: 100px; /* Space for fixed header */
-    padding-bottom: 60px;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    padding-top: 80px !important; /* Space for fixed header */
+    padding-bottom: 150px !important; /* Huge padding so bottom isn't cut off */
   }
-  .panel-inner::-webkit-scrollbar { display: none; }
   .flex-center {
-    align-items: flex-start; /* Fix flex center scroll bug */
+    align-items: flex-start !important; /* Fix flex center scroll bug */
   }
 
   /* Shrink Texts and Background Boxes universally */
-  .white-glass-box { padding: 25px 20px !important; }
-  .concept-text { font-size: 0.8rem; line-height: 1.8; }
-  .menu-card { padding: 25px; }
-  .menu-card h3 { font-size: 1.2rem; margin-bottom: 10px; }
-  .menu-card p { font-size: 0.75rem; line-height: 1.6; }
-  .plan-name { font-size: 1.1rem; }
-  .plan-price { font-size: 1rem; }
-  .faq-q { font-size: 0.9rem; }
-  .faq-a { font-size: 0.8rem; line-height: 1.5; }
-  .faq-q span, .faq-a span { font-size: 1rem; }
-  .section-title { font-size: 2rem; margin-bottom: 15px !important; }
+  .white-glass-box { padding: 15px !important; width: 92% !important; margin: 0 auto; }
+  .concept-text { font-size: 0.75rem !important; line-height: 1.6 !important; }
+  .menu-card { padding: 15px !important; }
+  .menu-card h3 { font-size: 1.1rem !important; margin-bottom: 8px !important; }
+  .menu-card p { font-size: 0.7rem !important; line-height: 1.5 !important; }
+  .plan-name { font-size: 0.95rem !important; }
+  .plan-price { font-size: 0.9rem !important; }
+  .faq-q { font-size: 0.85rem !important; }
+  .faq-a { font-size: 0.75rem !important; line-height: 1.4 !important; }
+  .faq-q span, .faq-a span { font-size: 0.9rem !important; }
+  .section-title { font-size: 1.5rem !important; margin-bottom: 10px !important; }
 
   /* Contact and Map Vertical Stack and Shrink */
   .contact-access-wrapper {
-    grid-template-columns: 1fr; /* Force 1 column */
-    gap: 30px;
-    padding: 30px 20px !important;
+    grid-template-columns: 1fr !important; /* Force 1 column */
+    gap: 20px !important;
+    padding: 15px !important;
+    width: 95% !important;
   }
-  .input-group label { font-size: 0.75rem; margin-bottom: 4px; }
+  .input-group label { font-size: 0.7rem !important; margin-bottom: 4px !important; }
   .input-group input, .input-group textarea, .input-group select {
-    padding: 10px;
-    font-size: 0.85rem;
+    padding: 8px !important;
+    font-size: 0.8rem !important;
   }
-  .contact-form { gap: 15px; }
-  .map-container { min-height: 300px; }
+  .contact-form { gap: 10px !important; }
+  .map-container { min-height: 250px !important; }
 }
 
 /* Hide specific Safari/iOS video play buttons permanently */
