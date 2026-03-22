@@ -69,4 +69,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // Mobile Contact Form Toggle Logic
+  const formToggleBtn = document.getElementById('formToggleBtn');
+  const contactFormWrapper = document.getElementById('contactFormWrapper');
+  if (formToggleBtn && contactFormWrapper) {
+    formToggleBtn.addEventListener('click', () => {
+      contactFormWrapper.classList.toggle('open');
+      if (contactFormWrapper.classList.contains('open')) {
+        formToggleBtn.textContent = '閉じる (Close)';
+      } else {
+        formToggleBtn.textContent = '📝 お問い合わせフォームを開く';
+      }
+    });
+  }
 });

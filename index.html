@@ -174,8 +174,14 @@
           <div class="contact-access-wrapper white-glass-box reveal" style="width: 100%; max-width: 1200px; padding: 60px;">
             <div class="contact-col">
               <h2 class="section-title text-left" style="margin-bottom: 20px;">Contact</h2>
-              <p style="margin-bottom: 40px; font-size: 0.95rem; line-height: 1.8; color: var(--color-black);">ご予約・お問い合わせはお気軽に<br>下記のフォームよりご連絡ください。</p>
-              <form class="contact-form">
+              <p class="contact-desc" style="margin-bottom: 40px; font-size: 0.95rem; line-height: 1.8; color: var(--color-black);">ご予約・お問い合わせはお気軽に<br>下記のフォームよりご連絡ください。</p>
+              
+              <button type="button" class="mobile-form-toggle" id="formToggleBtn">
+                📝 お問い合わせフォームを開く
+              </button>
+
+              <div class="form-wrapper" id="contactFormWrapper">
+                <form class="contact-form">
                 <div class="input-group">
                   <label>Name</label>
                   <input type="text" placeholder="お名前" required>
@@ -223,6 +229,7 @@
                   <span>Send Message</span><div class="btn-line"></div>
                 </button>
               </form>
+              </div>
             </div>
             <div class="access-col">
               <h2 class="section-title text-left" style="margin-bottom: 20px;">Access</h2>
