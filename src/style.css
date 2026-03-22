@@ -733,42 +733,28 @@ h1, h2, h3, h4, h5, h6, .serif {
   }
   .contact-form { gap: 10px !important; }
   .map-container { min-height: 250px !important; }
-  
-  /* Contact Form Mobile Accordion */
-  .mobile-form-toggle {
-    display: block !important;
+
+  /* Mobile PC Separate Logic nav link override */
+  .mobile-only-nav { display: block !important; }
+
+  /* Since separation divides map and form, re-pad glass box */
+  .access-col, .contact-col {
     width: 100%;
-    padding: 15px;
-    background: rgba(255,255,255,0.8);
-    border: 1px solid rgba(0,0,0,0.2);
-    font-family: var(--font-sans);
-    font-size: 0.9rem !important;
-    cursor: pointer;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.45);
+    padding: 15px !important;
     border-radius: 4px;
-    text-align: center;
-    color: var(--color-black);
-    font-weight: 600;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   }
-  .form-wrapper {
-    display: none;
-  }
-  .form-wrapper.open {
-    display: block;
-    animation: fadeInForm 0.4s ease forwards;
-  }
-  @keyframes fadeInForm {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  .contact-desc {
-    display: none !important;
+  .contact-access-wrapper {
+    background: transparent !important;
+    box-shadow: none !important;
+    padding: 0 !important;
   }
 }
 
-/* PC View settings for Form Accordion */
-.mobile-form-toggle { display: none; }
-.form-wrapper { display: block; }
+.mobile-only-nav { display: none; }
 
 /* Hide specific Safari/iOS video play buttons permanently */
 video::-webkit-media-controls { display: none !important; }

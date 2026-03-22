@@ -70,17 +70,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Mobile Contact Form Toggle Logic
-  const formToggleBtn = document.getElementById('formToggleBtn');
-  const contactFormWrapper = document.getElementById('contactFormWrapper');
-  if (formToggleBtn && contactFormWrapper) {
-    formToggleBtn.addEventListener('click', () => {
-      contactFormWrapper.classList.toggle('open');
-      if (contactFormWrapper.classList.contains('open')) {
-        formToggleBtn.textContent = '閉じる (Close)';
-      } else {
-        formToggleBtn.textContent = '📝 お問い合わせフォームを開く';
+  // Mobile / PC Contact & Access Separation Logic
+  const mobileBreakpoint = window.matchMedia("(max-width: 900px)");
+  const accessPanelMobile = document.createElement('section');
+  accessPanelMobile.id = 'access';
+  accessPanelMobile.className = 'panel concrete-bg';
+  const accessPanelInner = document.createElement('div');
+  accessPanelInner.className = 'panel-inner flex-center';
+  accessPanelMobile.appendChild(accessPanelInner);
+  
+  function updateContactLayout(e) {
+    const contactWrapper = document.querySelector('.contact-access-wrapper');
+    const accessCol = document.querySelector('.access-col');
+    const scrollContainer = document.getElementById('scrollContainer');
+    
+    if (e.matches) {
+      if (accessCol && scrollContainer && contactWrapper) {
+        accessPanelInner.appendChild(accessCol);
+        const contactPanel = document.getElementById('contact');
+        if (contactPanel) {
+            scrollContainer.insertBefore(accessPanelMobile, contactPanel.nextSibling);
+        }
       }
-    });
+    } else {
+      if (accessCol && contactWrapper) {
+        contactWrapper.appendChild(accessCol);
+        if (accessPanelMobile.parentNode) {
+          accessPanelMobile.parentNode.removeChild(accessPanelMobile);
+        }
+      }
+    }
   }
+  
+  updateContactLayout(mobileBreakpoint);
+  mobileBreakpoint.addEventListener('change', updateContactLayout);
 });
