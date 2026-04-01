@@ -618,8 +618,6 @@ h1, h2, h3, h4, h5, h6, .serif {
   flex-direction: column;
   gap: 25px;
   position: relative; /* Anchor for success overlay */
-}
-  gap: 25px; /* Vertical spacing for inputs */
   width: 100%;
 }
 .map-container {
