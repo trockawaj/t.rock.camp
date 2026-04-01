@@ -107,4 +107,57 @@ document.addEventListener('DOMContentLoaded', () => {
   
   updateContactLayout(mobileBreakpoint);
   mobileBreakpoint.addEventListener('change', updateContactLayout);
+
+  // --- Web3Forms AJAX Submission Logic ---
+  const contactForm = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const submitBtnText = document.getElementById('submitBtnText');
+  const successMessage = document.getElementById('successMessage');
+
+  if (contactForm && submitBtn) {
+    contactForm.addEventListener('submit', async (e) => {
+      e.preventDefault(); // Stop standard form submission to prevent refresh/redirect
+
+      // Change button state to loading
+      submitBtn.disabled = true;
+      const originalText = submitBtnText.textContent;
+      submitBtnText.innerHTML = '<span class="loading-spinner"></span> 送信中...';
+      submitBtn.classList.add('loading');
+
+      const formData = new FormData(contactForm);
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+
+        const data = await response.json();
+        if (data.success) {
+          // Success Path
+          contactForm.reset();
+          submitBtnText.textContent = originalText;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+          
+          // Show success animation overlay
+          successMessage.classList.add('active');
+          setTimeout(() => {
+            successMessage.classList.remove('active');
+          }, 5000); // Hide after 5 seconds
+        } else {
+          throw new Error('Web3Forms returned unsuccessful response');
+        }
+      } catch (err) {
+        // Error Path
+        console.error('Mail Sending Error:', err);
+        alert('通信エラーが発生しました。時間を置いて再度お試しください。');
+        submitBtnText.textContent = '送信失敗';
+        setTimeout(() => {
+          submitBtnText.textContent = originalText;
+          submitBtn.disabled = false;
+          submitBtn.classList.remove('loading');
+        }, 3000);
+      }
+    });
+  }
 });

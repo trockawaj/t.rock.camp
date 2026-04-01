@@ -214,22 +214,23 @@
               <h2 class="section-title text-left" style="margin-bottom: 20px;">Contact</h2>
               <p class="contact-desc" style="margin-bottom: 40px; font-size: 0.95rem; line-height: 1.8; color: var(--color-black);">ご予約・お問い合わせはお気軽に<br>下記のフォームよりご連絡ください。</p>
               
-              <form class="contact-form">
+              <form class="contact-form" id="contactForm">
+                <input type="hidden" name="access_key" value="f72e1c59-8e83-4af6-ab3e-1c2e7a4a25e7">
                 <div class="input-group">
                   <label>Name</label>
-                  <input type="text" placeholder="お名前" required>
+                  <input type="text" name="name" placeholder="お名前" required>
                 </div>
                 <div class="input-group">
                   <label>Email</label>
-                  <input type="email" placeholder="メールアドレス" required>
+                  <input type="email" name="email" placeholder="メールアドレス" required>
                 </div>
                 <div class="input-group">
                   <label>利用日 (Date of Use)</label>
-                  <input type="date" required>
+                  <input type="date" name="date" required>
                 </div>
                 <div class="input-group">
                   <label>利用人数（大人）</label>
-                  <select required>
+                  <select name="guests" required>
                     <option value="" disabled selected>選択してください</option>
                     <option value="1">1人</option>
                     <option value="2">2人</option>
@@ -256,11 +257,17 @@
                 </div>
                 <div class="input-group">
                   <label>Message</label>
-                  <textarea placeholder="お問い合わせ内容" rows="5" required></textarea>
+                  <textarea name="message" placeholder="お問い合わせ内容" rows="5" required></textarea>
                 </div>
-                <button type="button" class="submit-btn" onclick="alert('Demo Submit')">
-                  <span>送信</span><div class="btn-line"></div>
+                <button type="submit" class="submit-btn" id="submitBtn">
+                  <span id="submitBtnText">送信</span><div class="btn-line"></div>
                 </button>
+                
+                <!-- Success Message Overlay -->
+                <div id="successMessage" class="form-success-message">
+                  <div class="success-icon">✔</div>
+                  <p>送信完了いたしました</p>
+                </div>
               </form>
             </div>
             <div class="access-col">
