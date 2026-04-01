@@ -21,13 +21,16 @@
 }
 
 body, html {
-  width: 100vw;
-  height: 100vh;
+  position: fixed; /* Stop Safari rubber band shifting the entire page */
+  top: 0; left: 0; right: 0; bottom: 0;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   font-family: var(--font-sans);
   color: var(--color-light);
   background-color: var(--color-white); /* Base changed to white */
   -webkit-font-smoothing: antialiased;
+  touch-action: none; /* iOS Safari safety override */
 }
 
 h1, h2, h3, h4, h5, h6, .serif {
@@ -38,8 +41,8 @@ h1, h2, h3, h4, h5, h6, .serif {
 /* Scroll Container */
 .scroll-container {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-behavior: smooth;
@@ -55,7 +58,7 @@ h1, h2, h3, h4, h5, h6, .serif {
 .panel {
   flex: 0 0 100vw;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   position: relative;
   background-color: var(--color-black);
   scroll-snap-align: start;
@@ -687,7 +690,7 @@ h1, h2, h3, h4, h5, h6, .serif {
     justify-content: flex-start;
     padding-top: 80px;
     padding-bottom: 150px !important; /* Huge padding for Safari bottom bar */
-    height: 100dvh !important;
+    height: 100% !important;
     overflow-y: auto;
   }
   .main-nav li { margin: 10px 0; }
@@ -695,12 +698,15 @@ h1, h2, h3, h4, h5, h6, .serif {
 
   /* Enable Vertical Scroll Inside Panels */
   .panel, .scroll-container {
-    height: 100dvh !important; /* Safari 100vh bug fix */
+    height: 100% !important; /* Safely perfectly matches position fixed */
   }
   .panel-inner {
+    height: 100%;
     overflow-y: auto;
     padding-top: 80px !important; /* Space for fixed header */
     padding-bottom: 150px !important; /* Huge padding so bottom isn't cut off */
+    touch-action: pan-y; /* Allow vertical pan on elements needing scrolling */
+    -webkit-overflow-scrolling: touch;
   }
   .flex-center {
     align-items: flex-start !important; /* Fix flex center scroll bug */
