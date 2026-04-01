@@ -669,6 +669,76 @@ h1, h2, h3, h4, h5, h6, .serif {
   width: 90px;
 }
 
+/* Contact Form Enhancements: Success Overlay and Loading */
+.form-success-message {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 10;
+  color: var(--color-black);
+  backdrop-filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+.form-success-message.active {
+  display: flex;
+  opacity: 1;
+}
+.success-icon {
+  font-size: 3rem;
+  color: #2e7d32;
+  margin-bottom: 15px;
+  transform: scale(0);
+}
+.form-success-message.active .success-icon {
+  animation: scaleBounce 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards 0.2s;
+}
+.form-success-message p {
+  font-size: 1.15rem;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+  transform: translateY(10px);
+  opacity: 0;
+}
+.form-success-message.active p {
+  animation: fadeUp 0.6s ease forwards 0.4s;
+}
+
+@keyframes scaleBounce {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+@keyframes fadeUp {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+.submit-btn.loading {
+  background: var(--color-accent);
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
 /* Responsive constraints */
 @media (max-width: 1200px) {
   .section-title { font-size: 4rem; }
